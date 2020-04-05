@@ -73,10 +73,14 @@ class Game {
           cars[index - 1].shapeColor = "red";
           camera.position.x = displayWidth/2;
           camera.position.y = cars[index-1].y;
+          fill("black");
+          textSize(40);
+          text(allPlayers[plr].name,x-50,y-50 );
+
         }
        
         //textSize(15);
-        //text(allPlayers[plr].name + ": " + allPlayers[plr].distance, 120,display_position)
+        //text+ ": " + allPlayers[plr].distance, 120,display_position)
       }
 
     }
@@ -86,8 +90,10 @@ class Game {
       player.update();
     }
 
-    if(player.distance > 3860){
+    if(player.distance > 4200){
       gameState = 2;
+      textSize(200);
+     text("GAME OVER",displayWidth/2 -600,y-120);
     }
    
     drawSprites();
